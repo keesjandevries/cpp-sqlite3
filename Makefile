@@ -19,9 +19,8 @@ SQLITE3_LIB=${SQLITE3_DIR}/lib
 
 
 # Includes and Libraries
-INC_FLAGS += -I${INC_DIR} -I
-#LIB_FLAGS += -L${SQLITE3_LIB} -lsqlite3
-LIB_FLAGS += -ldl -L/home/keesjan/Documents/test_sql/sqlite-autoconf-3071502/lib -lsqlite3
+INC_FLAGS += -I${INC_DIR} -I${SQLITE3_INC}
+LIB_FLAGS += -ldl -L${SQLITE3_LIB} -lsqlite3
 
 
 # Compile-Time Definitions
