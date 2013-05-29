@@ -1,34 +1,6 @@
 ############################################################################################
-#
-# makefile
-#
-# Original Author : Christopher Hunt
-# Creation Date   : 05/04/2013
-#
-# Last Update     : Christopher Hunt & Ben Krikler
-# At              : 05/04/2013
-#
-#
-# A simple, flexible makefile designed to work well within a rigid directory structure.
-# Builds multiple executables containing all implementation files.
-#
-# For basic usage the following is required:
-#
-#  1.  Source files are expected to be in "./src/" 
-#  2.  Header files are expected to be in "./include/".
-#  3.  Executable source files must have the suffix ".cxx" 
-#  4.  Implementation source files must have the suffix ".cpp"
-#
-# If the previous reuirements are met, the makefile will locate the necessary files and
-#  build all excutables by default, placing them the "bin" directory.
-#
-#
-# For basic use, it is advised that only the Defines, Includes and Library flags be altered.
-# More complicated directory structures may warrant changes to the preset directories below.
-#
-# It is not advised that the user modify any code below the second hash-line 
-#                                     On pain of GNU Make!
-#
+# Modified Makefile from ICHEP Coder's Club: i
+# https://github.com/ichep-coders-club/Bits-n-Pieces/blob/master/makefiles.d/makefile.multi_exe
 ############################################################################################
 
 # File Locations
@@ -39,10 +11,17 @@ TMP_DIR = .temp
 
 EXE_SRC_DIR = ${SRC_DIR}
 
+#FIXME: this directory will depend on your system
+SQLITE3_DIR=/home/keesjan/Documents/test_sql/sqlite-autoconf-3071502/
+#Sqlite directories
+SQLITE3_INC=${SQLITE3_DIR}/include
+SQLITE3_LIB=${SQLITE3_DIR}/lib
+
 
 # Includes and Libraries
-INC_FLAGS += -I${INC_DIR}
-LIB_FLAGS += 
+INC_FLAGS += -I${INC_DIR} -I
+#LIB_FLAGS += -L${SQLITE3_LIB} -lsqlite3
+LIB_FLAGS += -ldl -L/home/keesjan/Documents/test_sql/sqlite-autoconf-3071502/lib -lsqlite3
 
 
 # Compile-Time Definitions
