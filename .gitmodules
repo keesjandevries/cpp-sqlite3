@@ -1,0 +1,3 @@
+[submodule "Bits-n-Pieces"]
+	path = Bits-n-Pieces
+	url = git@github.com:ichep-coders-club/Bits-n-Pieces
